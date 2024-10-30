@@ -15,7 +15,7 @@ function Register() {
             <br></br>
             <input onChange={(event) => setUsername(event.target.value)} placeholder="Username"/>
             <br></br>
-            <input onChange={(event) => setPassword(event.target.password)} placeholder="Password"/>
+            <input onChange={(event) => setPassword(event.target.value)} placeholder="Password"/>
             <br></br>
             <button type="submit">SUBMIT</button>
         </form>

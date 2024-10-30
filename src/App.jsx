@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import Post from './components/post';
 import Register from './components/register';
+import Login from './components/login';
+import ListUsers from './components/listUsers';
 
 function App() {
 
@@ -28,7 +30,9 @@ useEffect(() => {
 
   return (
     <>
+    <ListUsers />
     <Register />
+    <Login setIsLoggedIn={setIsLoggedIn} />
     <button onClick={() => loginLogout()}>{isLoggedIn ? <p>Logout</p> : <p>Login</p>}</button>
     <br></br>
     <h1>My React Refresh App</h1>
