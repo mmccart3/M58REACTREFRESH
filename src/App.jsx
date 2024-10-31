@@ -37,7 +37,8 @@ useEffect(() => {
     <Login setIsLoggedIn={setIsLoggedIn} />
     {isLoggedIn &&
     <button onClick={() => logout()}>Logout</button>
-    }<br></br>
+    }
+    <br></br>
     <h1>My React Refresh App</h1>
   {isLoggedIn && 
   <>

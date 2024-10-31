@@ -1,7 +1,8 @@
 import { useState } from "react";
 import readCookie from "../utils/readCookie";
 
-function ListUsers() {
+// eslint-disable-next-line react/prop-types
+function ListUsers({setIsloggedIn}) {
     const [userlist,setUserlist] =useState([]);
     async function clickHandler1(event) {
         let token = readCookie("jwt_token");
@@ -23,7 +24,7 @@ function ListUsers() {
         if(responseStatus === 200) {
             setUserlist(await res.json())
             console.log(userlist);
-            
+            setIsloggedIn(true);
         } else {
             console.log("userlist not found");
             setUserlist([]);
