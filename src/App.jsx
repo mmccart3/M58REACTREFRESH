@@ -4,6 +4,7 @@ import Post from './components/post';
 import Register from './components/register';
 import Login from './components/login';
 import ListUsers from './components/listUsers';
+import expireCookie from './utils/expireCookie';
 
 function App() {
 
@@ -17,7 +18,8 @@ async function fetchImages() {
   console.log("hello");
 }
 
-function loginLogout() {
+function logout() {
+  expireCookie("jwt_token");
   setIsLoggedIn(!isLoggedIn);
   console.log(isLoggedIn);
 }
@@ -30,11 +32,12 @@ useEffect(() => {
 
   return (
     <>
-    <ListUsers />
+    <ListUsers setIsLoggedIn={setIsLoggedIn}/>
     <Register />
     <Login setIsLoggedIn={setIsLoggedIn} />
-    <button onClick={() => loginLogout()}>{isLoggedIn ? <p>Logout</p> : <p>Login</p>}</button>
-    <br></br>
+    {isLoggedIn &&
+    <button onClick={() => logout()}>Logout</button>
+    }<br></br>
     <h1>My React Refresh App</h1>
   {isLoggedIn && 
   <>
