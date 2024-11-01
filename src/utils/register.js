@@ -1,7 +1,7 @@
 export async function register(email, username, password) {
     try {
         const res = await fetch(
-            "http://localhost:5002/addUser",
+            "https://m58restapi-production.up.railway.app/addUser",
             {
                 method: "POST",
                 headers: {"Content-Type":"application/json"},

@@ -11,7 +11,7 @@ function ListUsers({setIsloggedIn}) {
         let authorization = "Bearer " + token;
 
         const res= await fetch(
-            "http://localhost:5002/listAllUsers",
+            "https://m58restapi-production.up.railway.app/listAllUsers",
             {
                 method: "GET",
                 headers: {
